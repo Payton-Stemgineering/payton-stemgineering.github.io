@@ -1,0 +1,398 @@
+:root {
+    --back-color: white;
+    --secondary-back-color: black;
+    --ternary-back-color: #0A1128;
+    --tab-color: #CCBF8E;
+    --sec-tab-color: #E1DABD;
+    --font-size-base: 18px;
+    --font-size-large: 24px;
+    --my-neutral: #F3E2E6;
+    --my-black: #32383D;
+    --my-red: #D66283;
+    --my-orange: #D7975F;
+    --my-gray: #646a70;
+    --my-blue: #4EA5D5;
+    --my-green: #57b38b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Flex", sans-serif;
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: var(--back-color);
+    font-size: var(--font-size-base);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#navbar a {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1em;
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: 0.5s;
+
+    color: var(--my-black);
+}
+
+#navbar a:hover {
+    scale: 1.1;
+}
+
+#menu {
+    display: flex;
+    gap: 2rem;
+}
+
+#menu a {
+    text-decoration: none;
+}
+
+#hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--my-black);
+}
+
+#close {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#close::before, #close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 30px;
+    border-radius: 2px;
+    background: var(--my-black);
+    transform-origin: center;
+}
+
+#close::before { transform: translate(-50%, -50%) rotate(45deg); }
+#close::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+#overlayNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    z-index: 2000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+}
+
+#overlayNav.active {
+    transform: translateX(0);
+}
+
+#overlayNav #close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#overlayMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#overlayMenu a {
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    color: var(--my-black);
+    font-weight: 600;
+}
+
+#overlayNav.active #overlayMenu a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#overlayNav.active #overlayMenu a:hover {
+    scale: 1.1;
+}
+
+#overlayNav.active #overlayMenu a:nth-child(1) { 
+    transition: opacity 0.4s ease 0.1s, 
+                transform 0.4s ease 0.1s,
+                scale 0.3s ease 0s;
+}
+#overlayNav.active #overlayMenu a:nth-child(2) { 
+    transition: opacity 0.4s ease 0.2s, 
+                transform 0.4s ease 0.2s,
+                scale 0.3s ease 0s;
+}
+#overlayNav.active #overlayMenu a:nth-child(3) { 
+    transition: opacity 0.4s ease 0.3s, 
+                transform 0.4s ease 0.3s,
+                scale 0.3s ease 0s;
+}
+#overlayNav.active #overlayMenu a:nth-child(4) { 
+    transition: opacity 0.4s ease 0.4s, 
+                transform 0.4s ease 0.4s,
+                scale 0.3s ease 0s;
+}
+
+@media (max-width: 825px) {
+    #menu { display: none; }
+    #hamburger { display: block; }
+}
+
+.banner {
+    position: relative;
+    padding-top: 5rem;
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+    background: linear-gradient(135deg, #eb9b54 0%, #57b38b 50%, #4e70d5 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--back-color);
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    text-align: center;
+}
+
+.banner h1 {
+    font-family: "Audiowide", sans-serif;
+}
+
+h2 {
+    font-family: "Audiowide", sans-serif;
+}
+
+.content-card {
+    margin: 5em auto;
+    width: 80%;
+    max-width: 750px;
+    padding: 2em;
+    background: linear-gradient(170deg, #E4CBA3 0%, #E6BB89 50%, #E2AB92 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.75em;
+}
+
+.content-card :not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.content-block {
+    margin: 5em auto;
+    width: 80%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.75em;
+}
+
+.text-block {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.75em;
+}
+
+.image-block {
+    width: 100vw;
+    max-width: 1200px;
+}
+
+.content-block > *:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: calc((300px * 3) + (2.5em * 2));
+    margin-top: 1.5em;
+    gap: 2.5em;
+    width: 100%;
+    place-items: center;
+}
+
+.more-content {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    gap: 3em;
+}
+
+.image-item {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.image-item:not(.more-content > .image-item) {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.image-item > *:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.content-block .image-item p {
+    margin-bottom: 0em;
+}
+
+.image-card {
+    width: 80%;
+    height: auto;
+    border: 10px solid rgba(230,141,96,0.5);
+    border-radius: 8px;
+}
+
+.circular {
+    border-radius: 50%;
+}
+
+.button {
+    margin-top: 1em;
+    padding: 1em 2em;
+    color: #F0F0F0;
+    font-weight: 500;
+    background: linear-gradient(135deg, #E68D60, var(--my-red));
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(230,141,96,0.6);
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #3B3B3B;
+    color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-base);
+    margin-top: 2em;
+    padding: 2em;
+    gap: 2em;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.social-media a {
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-media a:nth-of-type(1) {
+    background: linear-gradient(90deg, var(--my-red), var(--my-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-media a:nth-of-type(2) {
+    background: linear-gradient(90deg, var(--my-orange), var(--my-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-media a:nth-of-type(3) {
+    background: linear-gradient(90deg, var(--my-green), var(--my-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-media a:hover {
+    scale: 1.1;
+}
+
+.footer p {
+    margin: 0;
+    font-size: calc(var(--font-size-base) * 0.8);
+}
+
+@media (min-width: 680px) {
+    .image-grid:not(.more-content) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
