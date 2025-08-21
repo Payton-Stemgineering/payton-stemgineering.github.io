@@ -212,7 +212,7 @@ body {
                 scale 0.3s ease 0s;
 }
 
-@media (max-width: 825px) {
+@media (max-width: 880px) {
     #menu { display: none; }
     #hamburger { display: block; }
 }
@@ -354,7 +354,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    background-color: #3B3B3B;
+    background: linear-gradient(180deg, transparent 0%, var(--my-pink) 50%);
     color: #F0F0F0;
     display: flex;
     flex-direction: column;
@@ -370,31 +370,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     gap: 1em;
 }
+
 
 .social-media a {
     font-weight: 600;
     text-decoration: none;
     transition: 0.3s;
-}
-
-.social-media a:nth-of-type(1) {
-    background: linear-gradient(90deg, var(--my-red), var(--my-pink));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.social-media a:nth-of-type(2) {
-    background: linear-gradient(90deg, var(--my-pink), var(--my-orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.social-media a:nth-of-type(3) {
-    background: linear-gradient(90deg, var(--my-orange), var(--my-red));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--my-neutral);
 }
 
 .social-media a:hover {
@@ -406,8 +391,21 @@ body {
     font-size: calc(var(--font-size-base) * 0.8);
 }
 
+#graphic-image {
+    max-width: 80vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+}
+
 @media (min-width: 680px) {
     .image-grid:not(.more-content) {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 503px) {
+    .social-media {
+        flex-direction: column;
     }
 }
