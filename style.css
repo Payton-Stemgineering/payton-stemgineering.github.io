@@ -9,6 +9,7 @@
     --my-neutral: #F3E2E6;
     --my-black: #32383D;
     --my-red: #D66283;
+    --my-pink: #e86f5a;
     --my-orange: #D7975F;
     --my-gray: #646a70;
     --my-blue: #4EA5D5;
@@ -65,8 +66,30 @@ body {
     color: var(--my-black);
 }
 
-#navbar a:hover {
+#navbar a:not(#logo):hover {
     scale: 1.1;
+}
+
+#logo {
+    width: 0px;
+    height: auto;
+}
+
+#logo-image, #logo-image-narrow {
+    width: 300px;
+    height: auto;
+
+    position: fixed;
+    left: 10px;
+}
+
+#logo-image-narrow {
+    display: none;
+}
+
+@media (max-width: 390px) {
+    #logo-image { display: none; }
+    #logo-image-narrow { display: block; }
 }
 
 #menu {
@@ -200,7 +223,7 @@ body {
     width: 100%;
     height: 50vh;
     min-height: 350px;
-    background: linear-gradient(135deg, #eb9b54 0%, #57b38b 50%, #4e70d5 100%);
+    background: linear-gradient(135deg, #eb9b54 0%, #e86f5a 50%, #D66283 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,14 +231,6 @@ body {
     font-size: var(--font-size-large);
     font-weight: bold;
     text-align: center;
-}
-
-.banner h1 {
-    font-family: "Audiowide", sans-serif;
-}
-
-h2 {
-    font-family: "Audiowide", sans-serif;
 }
 
 .content-card {
@@ -365,19 +380,19 @@ h2 {
 }
 
 .social-media a:nth-of-type(1) {
-    background: linear-gradient(90deg, var(--my-red), var(--my-orange));
+    background: linear-gradient(90deg, var(--my-red), var(--my-pink));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .social-media a:nth-of-type(2) {
-    background: linear-gradient(90deg, var(--my-orange), var(--my-green));
+    background: linear-gradient(90deg, var(--my-pink), var(--my-orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .social-media a:nth-of-type(3) {
-    background: linear-gradient(90deg, var(--my-green), var(--my-blue));
+    background: linear-gradient(90deg, var(--my-orange), var(--my-red));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
