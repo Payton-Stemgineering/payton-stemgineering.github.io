@@ -72,7 +72,7 @@ body {
 
 #logo {
     width: 0px;
-    height: auto;
+    height: 0px;
 }
 
 #logo-image, #logo-image-narrow {
