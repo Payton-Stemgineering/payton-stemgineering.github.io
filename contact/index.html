@@ -55,6 +55,22 @@ program, need more info, or have feedback to share, feel free to reach out. Fill
 form below or drop us a message—we’re here to help!</p>
         </div>
 
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+
+            <input type="text" name="website" id="website" autocomplete="off" tabindex="-1" style="display:none">
+
+            <button type="submit" class="button-small">Submit</button>
+        </form>
+
+        <div id="loading-overlay">
+            <div class="loader"></div>
+            <p>Sending...</p>
+        </div>
+
         <footer class="footer">
             <image id="graphic-image" src="../Photos/graphic.png" />
             <div class="social-media">
@@ -66,6 +82,7 @@ form below or drop us a message—we’re here to help!</p>
             <p>Copyright © 2025 Payton Stemgineering</p>
         </footer>
 
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
         <script src="../app.js"></script>
 
     </body>
