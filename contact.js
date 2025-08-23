@@ -2,22 +2,6 @@
     emailjs.init("VXd2-7huC-LT-jFyr");
 })();
 
-/*document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const honeypot = document.getElementById("website").value;
-    if(honeypot) {
-        console.log("Spam detected");
-        return;
-    }
-
-    emailjs.sendForm("service_vnccivz", "template_xrjdo8h", this).then(() => {
-        alert("Message sent!");
-    }, (error) => {
-        alert("Failed to send. Error: " + JSON.stringify(error));
-    });
-})*/
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
     const overlay = document.getElementById("loading-overlay");
