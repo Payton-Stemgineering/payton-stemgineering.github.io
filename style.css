@@ -85,9 +85,11 @@ body {
 
 #logo-image-narrow {
     display: none;
+    width: 73px;
+    height: auto;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 440px) {
     #logo-image { display: none; }
     #logo-image-narrow { display: block; }
 }
@@ -425,7 +427,7 @@ body {
 }
 
 #contact-form {
-    max-width: 400px;
+    max-width: 500px;
     margin: auto;
 
     display: flex;
@@ -434,7 +436,7 @@ body {
 }
 
 #contact-form input, textarea {
-    width: 100%;
+    width: 80%;
     margin: 8px 0;
     padding: 8px;
 }
