@@ -12,6 +12,7 @@
     --my-purple: #65318e;
     --my-blue: #4b61d1;
     --my-white: #d2c7e1;
+    --my-transparent-white: #d2c7e18f;
     --my-midwhite: #e1b4d4;
 }
 
@@ -485,4 +486,60 @@ body.no-scroll {
     overflow-y: hidden;
     height: 100vh;
     padding-right: 0;
+}
+
+.resource-container {
+    display: flex;
+    max-width: 1200px;
+    flex-direction: row;
+    gap: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
+.resource-card {
+    width: 30%;
+    height: auto;
+    background: linear-gradient(180deg, var(--my-blue) 30%, var(--my-pink) 200%);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.5em;
+    gap: 1.5em;
+}
+
+.resource-card h3 {
+    font-size: 32px;
+    color: var(--my-midwhite);
+}
+
+.resource-list {
+    color: var(--my-white);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.resource-list ul strong {
+    color: white;
+}
+
+@media (max-width: 1250px) {
+    .resource-container {
+        flex-direction: column;
+        max-width: 800px;
+    }
+
+    .resource-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .resource-card {
+        border-radius: 0px;
+    }
 }
