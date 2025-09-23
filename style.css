@@ -378,14 +378,16 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    background: linear-gradient(180deg, transparent 0%, var(--my-pink) 85%);
+    background: linear-gradient(180deg,  rgba(245, 200, 200, 0.511) 0%, var(--my-pink) 90%);
     color: #F0F0F0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: var(--font-size-base);
-    margin-top: 1em;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    margin-top: 10em;
     padding: 2em;
     gap: 2em;
 }
@@ -417,7 +419,7 @@ body {
 
 #graphic-image {
     max-width: 80vw;
-    max-height: 80vh;
+    max-height: 70vh;
     width: auto;
     height: auto;
 }
@@ -506,7 +508,7 @@ body.no-scroll {
     gap: 2em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2em;
+    margin-bottom: 5em;
 }
 
 .resource-card {
@@ -561,4 +563,67 @@ body.no-scroll {
     .resource-card {
         width: 90%;
     }
+}
+
+#donate {
+    padding: 0.75em 1.5em;
+    color: #F0F0F0 !important;
+    font-weight: 500;
+    background-color: var(--my-blue);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    transition: 0.3s;
+}
+
+#donate-small {
+    padding: 0.5em 1em;
+    color: #F0F0F0 !important;
+    background-color: var(--my-blue);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#donate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(177, 88, 166, 0.3);
+    cursor: pointer;
+}
+
+#icon {
+    width: 50px;
+}
+
+.footnote-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.75em;
+}
+
+.footnote-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5em;
+
+    width: 90%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1.5em;
+
+    background: linear-gradient(180deg, rgba(245, 200, 200, 0.333) 0%, var(--my-pink) 100%);
+}
+
+.round-box {
+    width: fit-content;
+    border-radius: 8px;
+    border: 5px solid #e7e0e2;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 0 0 8px rgba(31, 38, 135, 0.1), inset 0 4px 20px rgba(255, 255, 255, 0.3);
 }
