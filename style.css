@@ -25,7 +25,15 @@
 }
 
 body {
-    background-color: var(--back-color);
+    /*background-color: var(--back-color);*/
+    background: radial-gradient(circle at 0% 0%, rgba(75, 97, 209, 0.25), rgba(75, 97, 209, 0) 23%),
+radial-gradient(circle at 93% 88%, rgba(247, 127, 143, 0.07), rgba(247, 127, 143, 0) 26%),
+radial-gradient(circle at 29% 7%, rgba(247, 127, 143, 0.13), rgba(247, 127, 143, 0) 50%),
+radial-gradient(circle at 100% 60%, rgba(75, 97, 209, 0.08), rgba(75, 97, 209, 0) 31%),
+linear-gradient(to bottom right, rgba(231, 224, 226, 1), rgba(231, 224, 226, 1));
+    min-height: 100vh;
+    margin: 0;
+    color: #29212f;
     font-size: var(--font-size-base);
     overflow-x: hidden;
     overflow-y: scroll;
@@ -221,25 +229,25 @@ body {
 
 .banner {
     position: relative;
-    padding-top: 5rem;
+    margin-top: 5rem;
     width: 100%;
-    height: 50vh;
-    min-height: 350px;
-    background: linear-gradient(135deg, var(--my-pink) 0%, var(--my-blue) 100%);
+    height: 20vh;
+    min-height: 300px;
+    /*background: linear-gradient(135deg, var(--back-color) 0%, var(--my-blue) 100%);*/
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--back-color);
     font-size: var(--font-size-large);
     text-align: center;
 }
 
 .content-card {
     margin: 5em auto;
+    margin-top: 0em;
     width: 80%;
     max-width: 750px;
     padding: 2em;
-    background: radial-gradient(ellipse 500% 300% at 10% -30%, var(--my-midwhite) 0%, var(--my-pink) 50%, var(--my-white) 100%);
+    background: radial-gradient(ellipse 500% 300% at 10% -30%, #edb8dd 0%, #e6949f 50%, #cebbe9 100%);
     backdrop-filter: blur(20px);
     border-radius: 8px;
     display: flex;
@@ -255,10 +263,17 @@ body {
     margin-bottom: 1em;
 }
 
+.content-card-light {
+    margin-top: 0;
+    background: radial-gradient(ellipse 500% 300% at 10% -30%, #e9d1e2 0%, #c5c3e3 50%, #d2c7e1 100%);
+}
+
 .content-block {
     margin: 5em auto;
+    margin-top: 0em;
     width: 80%;
     padding: 1em;
+    padding-top: 0em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -621,9 +636,19 @@ body.no-scroll {
 }
 
 .round-box {
+    padding: 2em;
     width: fit-content;
     border-radius: 8px;
     border: 5px solid #e7e0e2;
     border-radius: 8px;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 0 0 8px rgba(31, 38, 135, 0.1), inset 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.feature {
+    max-width: 300px;
+}
+
+.image-big {
+    width: 100%;
+    max-width: 750px;
 }
